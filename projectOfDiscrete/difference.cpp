@@ -2,7 +2,7 @@
 // #include <conio.h>
 // #define MAX 40
 
- //declaring a function
+// declaring a function
 // void create(int set[], int);
 // int SetDifference(int set1[], int, int set2[], int, int set3[]);
 
@@ -93,7 +93,9 @@ int main()
     // displaying
     for (i = 0; i < k; i++)
     {
-        cout << un[i]<<" ";
+        cout << un[i] << " ";
     }
+
+    cout << "Program run successfully...";
     return 0;
 }
