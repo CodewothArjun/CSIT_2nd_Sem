@@ -36,7 +36,6 @@ int main()
                 store[k] = A[i];
                 k++;
 
-                break;
             }
         }
     }

@@ -67,17 +67,17 @@
 using namespace std;
 int main()
 {
-    int arr1[] = {1, 2, 3, 4, 5, 6}, arr2[] = {3, 9, 10, 1, 2, 8};
-    int sizeA = sizeof(arr1) / sizeof(arr1[0]), sizeB = sizeof(arr2) / sizeof(arr2[2]);
-    int un[sizeA + sizeB];
+    int arr1[] = {1, 2, 3, 5, 6,8}, arr2[] = {3, 9, 10, 7, 11, 30};
+    int sizeA = sizeof(arr1) / sizeof(arr1[0]), sizeB = sizeof(arr2) / sizeof(arr2[0]);
+    int diff[sizeA];
     int i, j, k = 0, flag;
-    // logic for difference of sets, arr2-arr1
-    for (i = 0; i < sizeB; i++)
+    // logic for difference of sets, arr1-arr2
+    for (i = 0; i < sizeA; i++)
     {
         flag = 1;
-        for (j = 0; j < sizeA; j++)
+        for (j = 0; j < sizeB; j++)
         {
-            if (arr2[i] == arr1[j])
+            if (arr1[i] == arr2[j])
             {
                 flag = 0;
                 break;
@@ -85,7 +85,7 @@ int main()
         }
         if (flag == 1)
         {
-            un[k] = arr2[i];
+            diff[k] = arr1[i];
             k++;
         }
     }
@@ -93,9 +93,9 @@ int main()
     // displaying
     for (i = 0; i < k; i++)
     {
-        cout << un[i] << " ";
+        cout << diff[i] << " ";
     }
 
-    cout << "Program run successfully...";
+    cout << "\nProgram run successfully...";
     return 0;
 }
