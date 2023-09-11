@@ -31,12 +31,18 @@ int main()
 {
     ComOvLd c1, c2, c3;
     c1 = ComOvLd(2.3, 4.5);
-    c2 = ComOvLd(2.3, 4.5);
+    c2 = ComOvLd(2.2, 5.5);
     c3 = c1 + c2;
+
+    cout << "First Complex No.: ";
     c1.display();
     cout << endl;
+
+    cout << "Second Complex No.: ";
     c2.display();
     cout << endl;
+
+    cout << "Addition of Two Complex No.: ";
     c3.display();
     cout << endl;
 

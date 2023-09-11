@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepali Payment Gateway Integration</title>
+</head>
+<body>
+    <h1>Make a Payment</h1>
+    <form id="payment-form">
+        <label for="amount">Amount (NPR):</label>
+        <input type="number" id="amount" name="amount" required>
+        <br>
+        <label for="gateway">Select Payment Gateway:</label>
+        <select id="gateway" name="gateway" required>
+            <option value="esewa">eSewa</option>
+            <option value="khalti">Khalti</option>
+        </select>
+        <br>
+        <button type="submit">Proceed to Payment</button>
+    </form>
+
+    <script>
+        document.getElementById("payment-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const amount = document.getElementById("amount").value;
+            const gateway = document.getElementById("gateway").value;
+
+            // Send the payment data to your server for processing
+            // Include server-side code to interact with eSewa/Khalti APIs
+            // Ensure you have proper security measures and API key handling on the server.
+
+            // Example: Send payment data to the server using fetch
+            fetch("/process-payment", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    amount,
+                    gateway,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response from your server
+                console.log(data);
+                alert(data.message); // You can display a success/error message
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred during payment.");
+            });
+        });
+    </script>
+</body>
+</html>

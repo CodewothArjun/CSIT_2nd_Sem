@@ -1,1 +1,2 @@
-Dolakha
+
+    t4.showcount();
