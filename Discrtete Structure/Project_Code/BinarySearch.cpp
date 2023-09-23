@@ -45,8 +45,8 @@ int main()
 
     index = binarySearch(A, low, high, key);
     if (index == -1)
-        printf("\n Data don't present in the given Array");
+        printf("Data don't present in the given Array");
     else
-        printf(" \n Data present at %d index.", index);
+        printf("Data present at %d index.", index);
     return 0;
 }

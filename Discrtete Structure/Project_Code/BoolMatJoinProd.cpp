@@ -1,4 +1,3 @@
-//  Programs to implement Boolean matrix operations join, meet and Boolean product
 // program to implement boolean matrix operation join and meet or product.
 #include <math.h>
 #include <stdio.h>
@@ -9,7 +8,7 @@ int main()
     int s1, s2, i, j, m;
     int a[5][5], b[5][5];
     int product[5][5], join[5][5], meet[5][5];
-    printf("Enter the size of first square matrix");
+    printf("Enter the size of first square matrix : ");
     scanf("%d", &s1);
     printf("Elements of matrix:\n");
     for (i = 0; i < s1; i++)
@@ -17,7 +16,7 @@ int main()
         for (j = 0; j < s1; j++)
             scanf("%d", &a[i][j]);
     }
-    printf("Enter the size of second square matrix");
+    printf("Enter the size of second square matrix : ");
     scanf("%d", &s2);
     printf("Elements of matrix:\n");
     for (i = 0; i < s2; i++)
@@ -56,8 +55,6 @@ int main()
             for (m = 0; m < s2; m++)
             {
                 value = value || a[i][m] && b[m][j];
-                //        if(value)
-                //     break; // early out
             }
             product[i][j] = value;
         }

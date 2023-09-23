@@ -9,13 +9,10 @@ int main()
     long binary1, binary2;
     int i = 0, remainder = 0, sum[20];
 
-    printf("Enter the first binary number for addition: ");
+    printf("\n\nEnter the first binary number for addition: ");
     scanf("%ld", &binary1);
     printf("Enter the second binary number for addition: ");
     scanf("%ld", &binary2);
-    int dividend = binary1, divisor = binary2;
-    long binary3 = binary1, binary4 = binary2, multiply = 0;
-
     while (binary1 != 0 || binary2 != 0)
     {
         sum[i++] = (binary1 % 10 + binary2 % 10 + remainder) % 2;
@@ -36,8 +33,14 @@ int main()
     }
 
     // multiplication
-
+    long binary3, binary4, multiply = 0;
     int digit, factor = 1;
+
+    printf("\nEnter the first binary number for multiplication: ");
+    scanf("%ld", &binary3);
+    printf("Enter the second binary number for multiplication: ");
+    scanf("%ld", &binary4);
+
     while (binary4 != 0)
     {
         digit = binary4 % 10;
@@ -47,15 +50,20 @@ int main()
             multiply = binaryproduct(binary3, multiply);
         }
         else
-        {
             binary3 = binary3 * factor;
-        }
         binary4 = binary4 / 10;
         factor = 10;
     }
-    printf("\nProduct of two binary numbers: %ld\n", multiply);
+    printf("Product of two binary numbers: %ld\n", multiply);
 
     // Division
+    int dividend, divisor;
+
+    printf("Enter dividend: ");
+    scanf("%d", &dividend);
+
+    printf("Enter divisor: ");
+    scanf("%d", &divisor);
 
     int result = binaryDivision(dividend, divisor);
 
@@ -63,6 +71,7 @@ int main()
     {
         printf("Quotient: %d\n", result);
     }
+    printf("\n\n\n");
     return 0;
 }
 
@@ -112,6 +121,5 @@ int binaryDivision(int dividend, int divisor)
             quotient |= (1 << i);
         }
     }
-
     return quotient;
 }
